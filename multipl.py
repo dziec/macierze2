@@ -30,10 +30,7 @@ def matrix_mul(mtrx):
     result = [0] * n
     for i in range(n):
         result[i] = [0] * m
-    for i in range(len(mtrx1)):
-        for j in range(len(mtrx2[0])):
-            for k in range(len(mtrx2)):
-                result[i][j] += mtrx1[i][k] * mtrx2[k][j]
+     result = [[sum(a * b for a, b in zip(X_row, Y_col)) for Y_col in zip(*mtrx2)] for X_row in mtrx1]
     return result
 
 
